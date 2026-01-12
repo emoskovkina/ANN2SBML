@@ -1,0 +1,1757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1">
+  <model id="NN" substanceUnits="mmol" timeUnits="second" volumeUnits="litre" areaUnits="m2" lengthUnits="metre" extentUnits="mmol">
+    <listOfUnitDefinitions>
+      <unitDefinition id="m2">
+        <listOfUnits>
+          <unit kind="metre" exponent="2" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mmol">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-3" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="c" spatialDimensions="3" size="1" units="litre" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="X" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="S" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="PT" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="PM" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="V" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="X_max" value="3.19189642640129" constant="true"/>
+      <parameter id="S_max" value="5" constant="true"/>
+      <parameter id="PT_max" value="11.2094131454655" constant="true"/>
+      <parameter id="PM_max" value="11.561684904235" constant="true"/>
+      <parameter id="V_max" value="14.2964389367112" constant="true"/>
+      <parameter id="X_min" value="0.5" constant="true"/>
+      <parameter id="S_min" value="0.00305697679503479" constant="true"/>
+      <parameter id="PT_min" value="0" constant="true"/>
+      <parameter id="PM_min" value="0" constant="true"/>
+      <parameter id="V_min" value="1.5" constant="true"/>
+      <parameter id="t_max" value="24" constant="true"/>
+      <parameter id="t_scaled" value="0" constant="false"/>
+      <parameter id="X0" value="1" constant="true"/>
+      <parameter id="X0_min" value="0.5" constant="true"/>
+      <parameter id="X0_max" value="2.5" constant="true"/>
+      <parameter id="X0_scaled" value="1" constant="true"/>
+      <parameter id="S0" value="2" constant="true"/>
+      <parameter id="S0_min" value="1" constant="true"/>
+      <parameter id="S0_max" value="5" constant="true"/>
+      <parameter id="S0_scaled" value="2" constant="true"/>
+      <parameter id="V0" value="2" constant="true"/>
+      <parameter id="V0_min" value="1.5" constant="true"/>
+      <parameter id="V0_max" value="3.5" constant="true"/>
+      <parameter id="V0_scaled" value="2" constant="true"/>
+      <parameter id="Feed0" value="0.1625" constant="true"/>
+      <parameter id="Feed0_min" value="0.05" constant="true"/>
+      <parameter id="Feed0_max" value="0.5" constant="true"/>
+      <parameter id="Feed0_scaled" value="0.1625" constant="true"/>
+      <parameter id="delay_event" value="1" constant="true"/>
+      <parameter id="t_event" value="0" constant="false"/>
+      <parameter id="event_p_1" value="0" constant="false"/>
+      <parameter id="w_ih_0_0_0" value="0.0413360968232155" constant="true"/>
+      <parameter id="w_ih_0_1_0" value="-0.332115411758423" constant="true"/>
+      <parameter id="w_ih_0_2_0" value="0.0556617714464664" constant="true"/>
+      <parameter id="w_ih_0_3_0" value="-0.16153971850872" constant="true"/>
+      <parameter id="w_ih_0_4_0" value="0.0445161126554012" constant="true"/>
+      <parameter id="w_ih_0_0_1" value="-0.0832274034619331" constant="true"/>
+      <parameter id="w_ih_0_1_1" value="-0.207086488604546" constant="true"/>
+      <parameter id="w_ih_0_2_1" value="0.0538504384458065" constant="true"/>
+      <parameter id="w_ih_0_3_1" value="-0.00239951745606959" constant="true"/>
+      <parameter id="w_ih_0_4_1" value="-0.0693887174129486" constant="true"/>
+      <parameter id="w_ih_0_0_2" value="-0.623979151248932" constant="true"/>
+      <parameter id="w_ih_0_1_2" value="0.273723781108856" constant="true"/>
+      <parameter id="w_ih_0_2_2" value="-0.16984523832798" constant="true"/>
+      <parameter id="w_ih_0_3_2" value="-0.217003926634789" constant="true"/>
+      <parameter id="w_ih_0_4_2" value="0.182294189929962" constant="true"/>
+      <parameter id="w_ih_0_0_3" value="0.214627996087074" constant="true"/>
+      <parameter id="w_ih_0_1_3" value="-0.000263775989878923" constant="true"/>
+      <parameter id="w_ih_0_2_3" value="0.213368460536003" constant="true"/>
+      <parameter id="w_ih_0_3_3" value="-0.0702184066176414" constant="true"/>
+      <parameter id="w_ih_0_4_3" value="-0.11482497304678" constant="true"/>
+      <parameter id="w_ih_0_0_4" value="-0.530306875705719" constant="true"/>
+      <parameter id="w_ih_0_1_4" value="-0.197140276432037" constant="true"/>
+      <parameter id="w_ih_0_2_4" value="0.380802035331726" constant="true"/>
+      <parameter id="w_ih_0_3_4" value="0.0903111100196838" constant="true"/>
+      <parameter id="w_ih_0_4_4" value="0.00859896559268236" constant="true"/>
+      <parameter id="w_ih_0_0_5" value="-0.383905827999115" constant="true"/>
+      <parameter id="w_ih_0_1_5" value="-1.06331884860992" constant="true"/>
+      <parameter id="w_ih_0_2_5" value="0.779131829738617" constant="true"/>
+      <parameter id="w_ih_0_3_5" value="-0.429880112409592" constant="true"/>
+      <parameter id="w_ih_0_4_5" value="0.652856647968292" constant="true"/>
+      <parameter id="w_ih_0_0_6" value="0.253652423620224" constant="true"/>
+      <parameter id="w_ih_0_1_6" value="-0.0807875394821167" constant="true"/>
+      <parameter id="w_ih_0_2_6" value="0.093585729598999" constant="true"/>
+      <parameter id="w_ih_0_3_6" value="-0.158723384141922" constant="true"/>
+      <parameter id="w_ih_0_4_6" value="0.293291985988617" constant="true"/>
+      <parameter id="w_ih_0_0_7" value="0.133685871958733" constant="true"/>
+      <parameter id="w_ih_0_1_7" value="-0.0135140465572476" constant="true"/>
+      <parameter id="w_ih_0_2_7" value="-0.329257249832153" constant="true"/>
+      <parameter id="w_ih_0_3_7" value="-0.0605026222765446" constant="true"/>
+      <parameter id="w_ih_0_4_7" value="-0.0726155415177345" constant="true"/>
+      <parameter id="w_ih_0_0_8" value="-0.0553367175161839" constant="true"/>
+      <parameter id="w_ih_0_1_8" value="-0.315895795822144" constant="true"/>
+      <parameter id="w_ih_0_2_8" value="-0.371517360210419" constant="true"/>
+      <parameter id="w_ih_0_3_8" value="-0.0971933901309967" constant="true"/>
+      <parameter id="w_ih_0_4_8" value="0.0949573293328285" constant="true"/>
+      <parameter id="w_ih_0_0_9" value="0.359366893768311" constant="true"/>
+      <parameter id="w_ih_0_1_9" value="0.158558502793312" constant="true"/>
+      <parameter id="w_ih_0_2_9" value="0.063222698867321" constant="true"/>
+      <parameter id="w_ih_0_3_9" value="-0.136662021279335" constant="true"/>
+      <parameter id="w_ih_0_4_9" value="0.285110652446747" constant="true"/>
+      <parameter id="w_hh_0_0_0" value="0.0387989617884159" constant="true"/>
+      <parameter id="w_hh_0_1_0" value="-0.0530316755175591" constant="true"/>
+      <parameter id="w_hh_0_2_0" value="-0.131885796785355" constant="true"/>
+      <parameter id="w_hh_0_3_0" value="0.244714483618736" constant="true"/>
+      <parameter id="w_hh_0_4_0" value="0.343286454677582" constant="true"/>
+      <parameter id="w_hh_0_5_0" value="-0.029684878885746" constant="true"/>
+      <parameter id="w_hh_0_6_0" value="0.0292117539793253" constant="true"/>
+      <parameter id="w_hh_0_7_0" value="-0.0260848961770535" constant="true"/>
+      <parameter id="w_hh_0_8_0" value="-0.364599406719208" constant="true"/>
+      <parameter id="w_hh_0_9_0" value="0.183586657047272" constant="true"/>
+      <parameter id="w_hh_0_0_1" value="-0.0794042721390724" constant="true"/>
+      <parameter id="w_hh_0_1_1" value="0.547995865345001" constant="true"/>
+      <parameter id="w_hh_0_2_1" value="-0.444526165723801" constant="true"/>
+      <parameter id="w_hh_0_3_1" value="-0.439218282699585" constant="true"/>
+      <parameter id="w_hh_0_4_1" value="-0.423583418130875" constant="true"/>
+      <parameter id="w_hh_0_5_1" value="0.245534896850586" constant="true"/>
+      <parameter id="w_hh_0_6_1" value="0.331481158733368" constant="true"/>
+      <parameter id="w_hh_0_7_1" value="-0.371502280235291" constant="true"/>
+      <parameter id="w_hh_0_8_1" value="0.0957634672522545" constant="true"/>
+      <parameter id="w_hh_0_9_1" value="0.361132204532623" constant="true"/>
+      <parameter id="w_hh_0_0_2" value="0.107450395822525" constant="true"/>
+      <parameter id="w_hh_0_1_2" value="0.307484209537506" constant="true"/>
+      <parameter id="w_hh_0_2_2" value="0.426353961229324" constant="true"/>
+      <parameter id="w_hh_0_3_2" value="-0.208002910017967" constant="true"/>
+      <parameter id="w_hh_0_4_2" value="0.234343975782394" constant="true"/>
+      <parameter id="w_hh_0_5_2" value="-0.0490974299609661" constant="true"/>
+      <parameter id="w_hh_0_6_2" value="0.00426704809069633" constant="true"/>
+      <parameter id="w_hh_0_7_2" value="0.026568753644824" constant="true"/>
+      <parameter id="w_hh_0_8_2" value="0.0400714352726936" constant="true"/>
+      <parameter id="w_hh_0_9_2" value="0.20858670771122" constant="true"/>
+      <parameter id="w_hh_0_0_3" value="0.100683711469173" constant="true"/>
+      <parameter id="w_hh_0_1_3" value="-0.263376176357269" constant="true"/>
+      <parameter id="w_hh_0_2_3" value="-0.199806794524193" constant="true"/>
+      <parameter id="w_hh_0_3_3" value="-0.0238836500793695" constant="true"/>
+      <parameter id="w_hh_0_4_3" value="-0.336726516485214" constant="true"/>
+      <parameter id="w_hh_0_5_3" value="0.366430819034576" constant="true"/>
+      <parameter id="w_hh_0_6_3" value="0.107114523649216" constant="true"/>
+      <parameter id="w_hh_0_7_3" value="-0.0897955074906349" constant="true"/>
+      <parameter id="w_hh_0_8_3" value="0.462536454200745" constant="true"/>
+      <parameter id="w_hh_0_9_3" value="0.266706466674805" constant="true"/>
+      <parameter id="w_hh_0_0_4" value="-0.139934927225113" constant="true"/>
+      <parameter id="w_hh_0_1_4" value="-0.241749450564384" constant="true"/>
+      <parameter id="w_hh_0_2_4" value="0.151080295443535" constant="true"/>
+      <parameter id="w_hh_0_3_4" value="0.208258628845215" constant="true"/>
+      <parameter id="w_hh_0_4_4" value="0.316488653421402" constant="true"/>
+      <parameter id="w_hh_0_5_4" value="-0.0338704250752926" constant="true"/>
+      <parameter id="w_hh_0_6_4" value="-0.0458760559558868" constant="true"/>
+      <parameter id="w_hh_0_7_4" value="0.315556019544601" constant="true"/>
+      <parameter id="w_hh_0_8_4" value="0.0318645238876343" constant="true"/>
+      <parameter id="w_hh_0_9_4" value="-0.297207713127136" constant="true"/>
+      <parameter id="w_hh_0_0_5" value="-0.824546337127686" constant="true"/>
+      <parameter id="w_hh_0_1_5" value="0.911036193370819" constant="true"/>
+      <parameter id="w_hh_0_2_5" value="0.0356674939393997" constant="true"/>
+      <parameter id="w_hh_0_3_5" value="-1.15413200855255" constant="true"/>
+      <parameter id="w_hh_0_4_5" value="-0.456144511699677" constant="true"/>
+      <parameter id="w_hh_0_5_5" value="1.4917289018631" constant="true"/>
+      <parameter id="w_hh_0_6_5" value="-0.44425892829895" constant="true"/>
+      <parameter id="w_hh_0_7_5" value="-0.393129885196686" constant="true"/>
+      <parameter id="w_hh_0_8_5" value="1.36580491065979" constant="true"/>
+      <parameter id="w_hh_0_9_5" value="-0.0594319179654121" constant="true"/>
+      <parameter id="w_hh_0_0_6" value="0.0172689035534859" constant="true"/>
+      <parameter id="w_hh_0_1_6" value="-0.0363560281693935" constant="true"/>
+      <parameter id="w_hh_0_2_6" value="0.136146903038025" constant="true"/>
+      <parameter id="w_hh_0_3_6" value="-0.452622592449188" constant="true"/>
+      <parameter id="w_hh_0_4_6" value="-0.169230341911316" constant="true"/>
+      <parameter id="w_hh_0_5_6" value="0.176657378673553" constant="true"/>
+      <parameter id="w_hh_0_6_6" value="0.518945515155792" constant="true"/>
+      <parameter id="w_hh_0_7_6" value="0.261887460947037" constant="true"/>
+      <parameter id="w_hh_0_8_6" value="0.107969477772713" constant="true"/>
+      <parameter id="w_hh_0_9_6" value="-0.213647395372391" constant="true"/>
+      <parameter id="w_hh_0_0_7" value="0.287787705659866" constant="true"/>
+      <parameter id="w_hh_0_1_7" value="0.0742384493350983" constant="true"/>
+      <parameter id="w_hh_0_2_7" value="-0.131661102175713" constant="true"/>
+      <parameter id="w_hh_0_3_7" value="0.23585344851017" constant="true"/>
+      <parameter id="w_hh_0_4_7" value="0.158524408936501" constant="true"/>
+      <parameter id="w_hh_0_5_7" value="-0.0981495827436447" constant="true"/>
+      <parameter id="w_hh_0_6_7" value="0.481729477643967" constant="true"/>
+      <parameter id="w_hh_0_7_7" value="-0.0869957804679871" constant="true"/>
+      <parameter id="w_hh_0_8_7" value="-0.0625766292214394" constant="true"/>
+      <parameter id="w_hh_0_9_7" value="-0.193823546171188" constant="true"/>
+      <parameter id="w_hh_0_0_8" value="-0.142932832241058" constant="true"/>
+      <parameter id="w_hh_0_1_8" value="-0.345815032720566" constant="true"/>
+      <parameter id="w_hh_0_2_8" value="0.0477030500769615" constant="true"/>
+      <parameter id="w_hh_0_3_8" value="0.272929698228836" constant="true"/>
+      <parameter id="w_hh_0_4_8" value="-0.193150967359543" constant="true"/>
+      <parameter id="w_hh_0_5_8" value="0.0554345808923244" constant="true"/>
+      <parameter id="w_hh_0_6_8" value="-0.298578858375549" constant="true"/>
+      <parameter id="w_hh_0_7_8" value="0.0708758309483528" constant="true"/>
+      <parameter id="w_hh_0_8_8" value="0.317875802516937" constant="true"/>
+      <parameter id="w_hh_0_9_8" value="-0.0352256819605827" constant="true"/>
+      <parameter id="w_hh_0_0_9" value="0.0264924038201571" constant="true"/>
+      <parameter id="w_hh_0_1_9" value="0.178021132946014" constant="true"/>
+      <parameter id="w_hh_0_2_9" value="0.139854118227959" constant="true"/>
+      <parameter id="w_hh_0_3_9" value="0.0541469790041447" constant="true"/>
+      <parameter id="w_hh_0_4_9" value="0.064828522503376" constant="true"/>
+      <parameter id="w_hh_0_5_9" value="-0.147015109658241" constant="true"/>
+      <parameter id="w_hh_0_6_9" value="-0.219500303268433" constant="true"/>
+      <parameter id="w_hh_0_7_9" value="-0.0375284925103188" constant="true"/>
+      <parameter id="w_hh_0_8_9" value="-0.114789336919785" constant="true"/>
+      <parameter id="w_hh_0_9_9" value="0.214135870337486" constant="true"/>
+      <parameter id="b_ih_0_0" value="0.0444010458886623" constant="true"/>
+      <parameter id="b_ih_0_1" value="-0.41397699713707" constant="true"/>
+      <parameter id="b_ih_0_2" value="0.00752609642222524" constant="true"/>
+      <parameter id="b_ih_0_3" value="-0.00606899196282029" constant="true"/>
+      <parameter id="b_ih_0_4" value="-0.0583748407661915" constant="true"/>
+      <parameter id="b_ih_0_5" value="-0.14540758728981" constant="true"/>
+      <parameter id="b_ih_0_6" value="-0.21994049847126" constant="true"/>
+      <parameter id="b_ih_0_7" value="-0.200556516647339" constant="true"/>
+      <parameter id="b_ih_0_8" value="0.0615955293178558" constant="true"/>
+      <parameter id="b_ih_0_9" value="-0.183363392949104" constant="true"/>
+      <parameter id="b_hh_0_0" value="-0.00404426082968712" constant="true"/>
+      <parameter id="past_0_0" value="0" constant="false"/>
+      <parameter id="b_hh_0_1" value="0.162021100521088" constant="true"/>
+      <parameter id="past_0_1" value="0" constant="false"/>
+      <parameter id="b_hh_0_2" value="-0.145086273550987" constant="true"/>
+      <parameter id="past_0_2" value="0" constant="false"/>
+      <parameter id="b_hh_0_3" value="-0.039051853120327" constant="true"/>
+      <parameter id="past_0_3" value="0" constant="false"/>
+      <parameter id="b_hh_0_4" value="0.203180462121964" constant="true"/>
+      <parameter id="past_0_4" value="0" constant="false"/>
+      <parameter id="b_hh_0_5" value="-0.152812391519547" constant="true"/>
+      <parameter id="past_0_5" value="0" constant="false"/>
+      <parameter id="b_hh_0_6" value="0.343162328004837" constant="true"/>
+      <parameter id="past_0_6" value="0" constant="false"/>
+      <parameter id="b_hh_0_7" value="-0.201944723725319" constant="true"/>
+      <parameter id="past_0_7" value="0" constant="false"/>
+      <parameter id="b_hh_0_8" value="0.259522467851639" constant="true"/>
+      <parameter id="past_0_8" value="0" constant="false"/>
+      <parameter id="b_hh_0_9" value="-0.143264144659042" constant="true"/>
+      <parameter id="past_0_9" value="0" constant="false"/>
+      <parameter id="event_p_0" value="0" constant="false"/>
+      <parameter id="p_n_0_0" value="0" constant="false"/>
+      <parameter id="p_n_0_1" value="0" constant="false"/>
+      <parameter id="p_n_0_2" value="0" constant="false"/>
+      <parameter id="p_n_0_3" value="0" constant="false"/>
+      <parameter id="p_n_0_4" value="0" constant="false"/>
+      <parameter id="p_n_0_5" value="0" constant="false"/>
+      <parameter id="p_n_0_6" value="0" constant="false"/>
+      <parameter id="p_n_0_7" value="0" constant="false"/>
+      <parameter id="p_n_0_8" value="0" constant="false"/>
+      <parameter id="p_n_0_9" value="0" constant="false"/>
+      <parameter id="w_l_0_0" value="-0.602772057056427" constant="true"/>
+      <parameter id="w_l_1_0" value="-0.873311161994934" constant="true"/>
+      <parameter id="w_l_2_0" value="-0.0964560434222221" constant="true"/>
+      <parameter id="w_l_3_0" value="0.249292805790901" constant="true"/>
+      <parameter id="w_l_4_0" value="-0.501699507236481" constant="true"/>
+      <parameter id="w_l_5_0" value="-0.0198127645999193" constant="true"/>
+      <parameter id="w_l_6_0" value="0.0770808458328247" constant="true"/>
+      <parameter id="w_l_7_0" value="0.612957119941711" constant="true"/>
+      <parameter id="w_l_8_0" value="-0.872581541538239" constant="true"/>
+      <parameter id="w_l_9_0" value="0.205565258860588" constant="true"/>
+      <parameter id="w_l_0_1" value="-0.418695509433746" constant="true"/>
+      <parameter id="w_l_1_1" value="0.191432192921638" constant="true"/>
+      <parameter id="w_l_2_1" value="0.0146577209234238" constant="true"/>
+      <parameter id="w_l_3_1" value="0.659070312976837" constant="true"/>
+      <parameter id="w_l_4_1" value="0.47159469127655" constant="true"/>
+      <parameter id="w_l_5_1" value="0.256727695465088" constant="true"/>
+      <parameter id="w_l_6_1" value="0.25793120265007" constant="true"/>
+      <parameter id="w_l_7_1" value="-0.298871666193008" constant="true"/>
+      <parameter id="w_l_8_1" value="-0.198372796177864" constant="true"/>
+      <parameter id="w_l_9_1" value="-0.140813678503036" constant="true"/>
+      <parameter id="w_l_0_2" value="-0.0117736887186766" constant="true"/>
+      <parameter id="w_l_1_2" value="0.00603240635246038" constant="true"/>
+      <parameter id="w_l_2_2" value="-0.426776647567749" constant="true"/>
+      <parameter id="w_l_3_2" value="0.246271520853043" constant="true"/>
+      <parameter id="w_l_4_2" value="-0.349305093288422" constant="true"/>
+      <parameter id="w_l_5_2" value="-0.00554986903443933" constant="true"/>
+      <parameter id="w_l_6_2" value="-0.139476448297501" constant="true"/>
+      <parameter id="w_l_7_2" value="-0.15677997469902" constant="true"/>
+      <parameter id="w_l_8_2" value="0.133410155773163" constant="true"/>
+      <parameter id="w_l_9_2" value="0.469359695911407" constant="true"/>
+      <parameter id="w_l_0_3" value="-0.0489549189805984" constant="true"/>
+      <parameter id="w_l_1_3" value="0.117485918104649" constant="true"/>
+      <parameter id="w_l_2_3" value="-0.382246136665344" constant="true"/>
+      <parameter id="w_l_3_3" value="0.2485421448946" constant="true"/>
+      <parameter id="w_l_4_3" value="-0.238278478384018" constant="true"/>
+      <parameter id="w_l_5_3" value="-0.0165843591094017" constant="true"/>
+      <parameter id="w_l_6_3" value="-0.182310059666634" constant="true"/>
+      <parameter id="w_l_7_3" value="-0.0583111271262169" constant="true"/>
+      <parameter id="w_l_8_3" value="0.154469683766365" constant="true"/>
+      <parameter id="w_l_9_3" value="0.5436851978302" constant="true"/>
+      <parameter id="w_l_0_4" value="-0.215924635529518" constant="true"/>
+      <parameter id="w_l_1_4" value="0.331544667482376" constant="true"/>
+      <parameter id="w_l_2_4" value="-0.486496031284332" constant="true"/>
+      <parameter id="w_l_3_4" value="-0.466861486434937" constant="true"/>
+      <parameter id="w_l_4_4" value="-0.344625771045685" constant="true"/>
+      <parameter id="w_l_5_4" value="-0.00747248157858849" constant="true"/>
+      <parameter id="w_l_6_4" value="0.370189070701599" constant="true"/>
+      <parameter id="w_l_7_4" value="0.0173038598150015" constant="true"/>
+      <parameter id="w_l_8_4" value="-0.305943310260773" constant="true"/>
+      <parameter id="w_l_9_4" value="0.000302759086480364" constant="true"/>
+      <parameter id="b_l_0" value="0.454916149377823" constant="true"/>
+      <parameter id="b_l_1" value="0.280225425958633" constant="true"/>
+      <parameter id="b_l_2" value="0.0658286958932877" constant="true"/>
+      <parameter id="b_l_3" value="0.144629821181297" constant="true"/>
+      <parameter id="b_l_4" value="0.116428896784782" constant="true"/>
+      <parameter id="p_X" value="0" constant="false"/>
+      <parameter id="p_S" value="0" constant="false"/>
+      <parameter id="p_PT" value="0" constant="false"/>
+      <parameter id="p_PM" value="0" constant="false"/>
+      <parameter id="p_V" value="0" constant="false"/>
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="X0_scaled">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <minus/>
+              <ci> X0 </ci>
+              <ci> X0_min </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <ci> X0_max </ci>
+              <ci> X0_min </ci>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="S0_scaled">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <minus/>
+              <ci> S0 </ci>
+              <ci> S0_min </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <ci> S0_max </ci>
+              <ci> S0_min </ci>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="V0_scaled">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <minus/>
+              <ci> V0 </ci>
+              <ci> V0_min </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <ci> V0_max </ci>
+              <ci> V0_min </ci>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="Feed0_scaled">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <minus/>
+              <ci> Feed0 </ci>
+              <ci> Feed0_min </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <ci> Feed0_max </ci>
+              <ci> Feed0_min </ci>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfRules>
+      <assignmentRule variable="t_scaled">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+            <ci> t_max </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="X">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <ci> p_X </ci>
+              <apply>
+                <minus/>
+                <ci> X_max </ci>
+                <ci> X_min </ci>
+              </apply>
+            </apply>
+            <ci> X_min </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="S">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <ci> p_S </ci>
+              <apply>
+                <minus/>
+                <ci> S_max </ci>
+                <ci> S_min </ci>
+              </apply>
+            </apply>
+            <ci> S_min </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="PT">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <ci> p_PT </ci>
+              <apply>
+                <minus/>
+                <ci> PT_max </ci>
+                <ci> PT_min </ci>
+              </apply>
+            </apply>
+            <ci> PT_min </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="PM">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <ci> p_PM </ci>
+              <apply>
+                <minus/>
+                <ci> PM_max </ci>
+                <ci> PM_min </ci>
+              </apply>
+            </apply>
+            <ci> PM_min </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="V">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <ci> p_V </ci>
+              <apply>
+                <minus/>
+                <ci> V_max </ci>
+                <ci> V_min </ci>
+              </apply>
+            </apply>
+            <ci> V_min </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+    <listOfEvents>
+      <event id="event_2" useValuesFromTriggerTime="true">
+        <trigger initialValue="false" persistent="true">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <eq/>
+              <ci> event_p_1 </ci>
+              <cn type="integer"> 1 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="event_p_1">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer"> 0 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="past_0_0">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <ci> p_n_0_0 </ci>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="past_0_1">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <ci> p_n_0_1 </ci>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="past_0_2">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <ci> p_n_0_2 </ci>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="past_0_3">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <ci> p_n_0_3 </ci>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="past_0_4">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <ci> p_n_0_4 </ci>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="past_0_5">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <ci> p_n_0_5 </ci>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="past_0_6">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <ci> p_n_0_6 </ci>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="past_0_7">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <ci> p_n_0_7 </ci>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="past_0_8">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <ci> p_n_0_8 </ci>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="past_0_9">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <ci> p_n_0_9 </ci>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+      <event id="event_0" useValuesFromTriggerTime="true">
+        <trigger initialValue="false" persistent="true">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <geq/>
+              <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+              <ci> t_event </ci>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="t_event">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <plus/>
+                <ci> t_event </ci>
+                <ci> delay_event </ci>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="event_p_0">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer"> 1 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="p_n_0_0">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <tanh/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> t_scaled </ci>
+                    <ci> w_ih_0_0_0 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> X0_scaled </ci>
+                    <ci> w_ih_0_1_0 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> S0_scaled </ci>
+                    <ci> w_ih_0_2_0 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> V0_scaled </ci>
+                    <ci> w_ih_0_3_0 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> Feed0_scaled </ci>
+                    <ci> w_ih_0_4_0 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_0 </ci>
+                    <ci> w_hh_0_0_0 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_1 </ci>
+                    <ci> w_hh_0_1_0 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_2 </ci>
+                    <ci> w_hh_0_2_0 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_3 </ci>
+                    <ci> w_hh_0_3_0 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_4 </ci>
+                    <ci> w_hh_0_4_0 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_5 </ci>
+                    <ci> w_hh_0_5_0 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_6 </ci>
+                    <ci> w_hh_0_6_0 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_7 </ci>
+                    <ci> w_hh_0_7_0 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_8 </ci>
+                    <ci> w_hh_0_8_0 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_9 </ci>
+                    <ci> w_hh_0_9_0 </ci>
+                  </apply>
+                  <ci> b_ih_0_0 </ci>
+                  <ci> b_hh_0_0 </ci>
+                </apply>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="p_n_0_1">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <tanh/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> t_scaled </ci>
+                    <ci> w_ih_0_0_1 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> X0_scaled </ci>
+                    <ci> w_ih_0_1_1 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> S0_scaled </ci>
+                    <ci> w_ih_0_2_1 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> V0_scaled </ci>
+                    <ci> w_ih_0_3_1 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> Feed0_scaled </ci>
+                    <ci> w_ih_0_4_1 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_0 </ci>
+                    <ci> w_hh_0_0_1 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_1 </ci>
+                    <ci> w_hh_0_1_1 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_2 </ci>
+                    <ci> w_hh_0_2_1 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_3 </ci>
+                    <ci> w_hh_0_3_1 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_4 </ci>
+                    <ci> w_hh_0_4_1 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_5 </ci>
+                    <ci> w_hh_0_5_1 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_6 </ci>
+                    <ci> w_hh_0_6_1 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_7 </ci>
+                    <ci> w_hh_0_7_1 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_8 </ci>
+                    <ci> w_hh_0_8_1 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_9 </ci>
+                    <ci> w_hh_0_9_1 </ci>
+                  </apply>
+                  <ci> b_ih_0_1 </ci>
+                  <ci> b_hh_0_1 </ci>
+                </apply>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="p_n_0_2">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <tanh/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> t_scaled </ci>
+                    <ci> w_ih_0_0_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> X0_scaled </ci>
+                    <ci> w_ih_0_1_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> S0_scaled </ci>
+                    <ci> w_ih_0_2_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> V0_scaled </ci>
+                    <ci> w_ih_0_3_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> Feed0_scaled </ci>
+                    <ci> w_ih_0_4_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_0 </ci>
+                    <ci> w_hh_0_0_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_1 </ci>
+                    <ci> w_hh_0_1_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_2 </ci>
+                    <ci> w_hh_0_2_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_3 </ci>
+                    <ci> w_hh_0_3_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_4 </ci>
+                    <ci> w_hh_0_4_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_5 </ci>
+                    <ci> w_hh_0_5_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_6 </ci>
+                    <ci> w_hh_0_6_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_7 </ci>
+                    <ci> w_hh_0_7_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_8 </ci>
+                    <ci> w_hh_0_8_2 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_9 </ci>
+                    <ci> w_hh_0_9_2 </ci>
+                  </apply>
+                  <ci> b_ih_0_2 </ci>
+                  <ci> b_hh_0_2 </ci>
+                </apply>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="p_n_0_3">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <tanh/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> t_scaled </ci>
+                    <ci> w_ih_0_0_3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> X0_scaled </ci>
+                    <ci> w_ih_0_1_3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> S0_scaled </ci>
+                    <ci> w_ih_0_2_3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> V0_scaled </ci>
+                    <ci> w_ih_0_3_3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> Feed0_scaled </ci>
+                    <ci> w_ih_0_4_3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_0 </ci>
+                    <ci> w_hh_0_0_3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_1 </ci>
+                    <ci> w_hh_0_1_3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_2 </ci>
+                    <ci> w_hh_0_2_3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_3 </ci>
+                    <ci> w_hh_0_3_3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_4 </ci>
+                    <ci> w_hh_0_4_3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_5 </ci>
+                    <ci> w_hh_0_5_3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_6 </ci>
+                    <ci> w_hh_0_6_3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_7 </ci>
+                    <ci> w_hh_0_7_3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_8 </ci>
+                    <ci> w_hh_0_8_3 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_9 </ci>
+                    <ci> w_hh_0_9_3 </ci>
+                  </apply>
+                  <ci> b_ih_0_3 </ci>
+                  <ci> b_hh_0_3 </ci>
+                </apply>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="p_n_0_4">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <tanh/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> t_scaled </ci>
+                    <ci> w_ih_0_0_4 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> X0_scaled </ci>
+                    <ci> w_ih_0_1_4 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> S0_scaled </ci>
+                    <ci> w_ih_0_2_4 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> V0_scaled </ci>
+                    <ci> w_ih_0_3_4 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> Feed0_scaled </ci>
+                    <ci> w_ih_0_4_4 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_0 </ci>
+                    <ci> w_hh_0_0_4 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_1 </ci>
+                    <ci> w_hh_0_1_4 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_2 </ci>
+                    <ci> w_hh_0_2_4 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_3 </ci>
+                    <ci> w_hh_0_3_4 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_4 </ci>
+                    <ci> w_hh_0_4_4 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_5 </ci>
+                    <ci> w_hh_0_5_4 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_6 </ci>
+                    <ci> w_hh_0_6_4 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_7 </ci>
+                    <ci> w_hh_0_7_4 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_8 </ci>
+                    <ci> w_hh_0_8_4 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_9 </ci>
+                    <ci> w_hh_0_9_4 </ci>
+                  </apply>
+                  <ci> b_ih_0_4 </ci>
+                  <ci> b_hh_0_4 </ci>
+                </apply>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="p_n_0_5">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <tanh/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> t_scaled </ci>
+                    <ci> w_ih_0_0_5 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> X0_scaled </ci>
+                    <ci> w_ih_0_1_5 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> S0_scaled </ci>
+                    <ci> w_ih_0_2_5 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> V0_scaled </ci>
+                    <ci> w_ih_0_3_5 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> Feed0_scaled </ci>
+                    <ci> w_ih_0_4_5 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_0 </ci>
+                    <ci> w_hh_0_0_5 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_1 </ci>
+                    <ci> w_hh_0_1_5 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_2 </ci>
+                    <ci> w_hh_0_2_5 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_3 </ci>
+                    <ci> w_hh_0_3_5 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_4 </ci>
+                    <ci> w_hh_0_4_5 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_5 </ci>
+                    <ci> w_hh_0_5_5 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_6 </ci>
+                    <ci> w_hh_0_6_5 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_7 </ci>
+                    <ci> w_hh_0_7_5 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_8 </ci>
+                    <ci> w_hh_0_8_5 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_9 </ci>
+                    <ci> w_hh_0_9_5 </ci>
+                  </apply>
+                  <ci> b_ih_0_5 </ci>
+                  <ci> b_hh_0_5 </ci>
+                </apply>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="p_n_0_6">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <tanh/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> t_scaled </ci>
+                    <ci> w_ih_0_0_6 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> X0_scaled </ci>
+                    <ci> w_ih_0_1_6 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> S0_scaled </ci>
+                    <ci> w_ih_0_2_6 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> V0_scaled </ci>
+                    <ci> w_ih_0_3_6 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> Feed0_scaled </ci>
+                    <ci> w_ih_0_4_6 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_0 </ci>
+                    <ci> w_hh_0_0_6 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_1 </ci>
+                    <ci> w_hh_0_1_6 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_2 </ci>
+                    <ci> w_hh_0_2_6 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_3 </ci>
+                    <ci> w_hh_0_3_6 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_4 </ci>
+                    <ci> w_hh_0_4_6 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_5 </ci>
+                    <ci> w_hh_0_5_6 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_6 </ci>
+                    <ci> w_hh_0_6_6 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_7 </ci>
+                    <ci> w_hh_0_7_6 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_8 </ci>
+                    <ci> w_hh_0_8_6 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_9 </ci>
+                    <ci> w_hh_0_9_6 </ci>
+                  </apply>
+                  <ci> b_ih_0_6 </ci>
+                  <ci> b_hh_0_6 </ci>
+                </apply>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="p_n_0_7">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <tanh/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> t_scaled </ci>
+                    <ci> w_ih_0_0_7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> X0_scaled </ci>
+                    <ci> w_ih_0_1_7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> S0_scaled </ci>
+                    <ci> w_ih_0_2_7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> V0_scaled </ci>
+                    <ci> w_ih_0_3_7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> Feed0_scaled </ci>
+                    <ci> w_ih_0_4_7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_0 </ci>
+                    <ci> w_hh_0_0_7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_1 </ci>
+                    <ci> w_hh_0_1_7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_2 </ci>
+                    <ci> w_hh_0_2_7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_3 </ci>
+                    <ci> w_hh_0_3_7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_4 </ci>
+                    <ci> w_hh_0_4_7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_5 </ci>
+                    <ci> w_hh_0_5_7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_6 </ci>
+                    <ci> w_hh_0_6_7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_7 </ci>
+                    <ci> w_hh_0_7_7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_8 </ci>
+                    <ci> w_hh_0_8_7 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_9 </ci>
+                    <ci> w_hh_0_9_7 </ci>
+                  </apply>
+                  <ci> b_ih_0_7 </ci>
+                  <ci> b_hh_0_7 </ci>
+                </apply>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="p_n_0_8">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <tanh/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> t_scaled </ci>
+                    <ci> w_ih_0_0_8 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> X0_scaled </ci>
+                    <ci> w_ih_0_1_8 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> S0_scaled </ci>
+                    <ci> w_ih_0_2_8 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> V0_scaled </ci>
+                    <ci> w_ih_0_3_8 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> Feed0_scaled </ci>
+                    <ci> w_ih_0_4_8 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_0 </ci>
+                    <ci> w_hh_0_0_8 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_1 </ci>
+                    <ci> w_hh_0_1_8 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_2 </ci>
+                    <ci> w_hh_0_2_8 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_3 </ci>
+                    <ci> w_hh_0_3_8 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_4 </ci>
+                    <ci> w_hh_0_4_8 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_5 </ci>
+                    <ci> w_hh_0_5_8 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_6 </ci>
+                    <ci> w_hh_0_6_8 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_7 </ci>
+                    <ci> w_hh_0_7_8 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_8 </ci>
+                    <ci> w_hh_0_8_8 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_9 </ci>
+                    <ci> w_hh_0_9_8 </ci>
+                  </apply>
+                  <ci> b_ih_0_8 </ci>
+                  <ci> b_hh_0_8 </ci>
+                </apply>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="p_n_0_9">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <tanh/>
+                <apply>
+                  <plus/>
+                  <apply>
+                    <times/>
+                    <ci> t_scaled </ci>
+                    <ci> w_ih_0_0_9 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> X0_scaled </ci>
+                    <ci> w_ih_0_1_9 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> S0_scaled </ci>
+                    <ci> w_ih_0_2_9 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> V0_scaled </ci>
+                    <ci> w_ih_0_3_9 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> Feed0_scaled </ci>
+                    <ci> w_ih_0_4_9 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_0 </ci>
+                    <ci> w_hh_0_0_9 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_1 </ci>
+                    <ci> w_hh_0_1_9 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_2 </ci>
+                    <ci> w_hh_0_2_9 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_3 </ci>
+                    <ci> w_hh_0_3_9 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_4 </ci>
+                    <ci> w_hh_0_4_9 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_5 </ci>
+                    <ci> w_hh_0_5_9 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_6 </ci>
+                    <ci> w_hh_0_6_9 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_7 </ci>
+                    <ci> w_hh_0_7_9 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_8 </ci>
+                    <ci> w_hh_0_8_9 </ci>
+                  </apply>
+                  <apply>
+                    <times/>
+                    <ci> past_0_9 </ci>
+                    <ci> w_hh_0_9_9 </ci>
+                  </apply>
+                  <ci> b_ih_0_9 </ci>
+                  <ci> b_hh_0_9 </ci>
+                </apply>
+              </apply>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+      <event id="event_1" useValuesFromTriggerTime="true">
+        <trigger initialValue="false" persistent="true">
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <eq/>
+              <ci> event_p_0 </ci>
+              <cn type="integer"> 1 </cn>
+            </apply>
+          </math>
+        </trigger>
+        <listOfEventAssignments>
+          <eventAssignment variable="event_p_0">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer"> 0 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="event_p_1">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <cn type="integer"> 1 </cn>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="p_X">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_0 </ci>
+                  <ci> w_l_0_0 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_1 </ci>
+                  <ci> w_l_1_0 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_2 </ci>
+                  <ci> w_l_2_0 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_3 </ci>
+                  <ci> w_l_3_0 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_4 </ci>
+                  <ci> w_l_4_0 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_5 </ci>
+                  <ci> w_l_5_0 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_6 </ci>
+                  <ci> w_l_6_0 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_7 </ci>
+                  <ci> w_l_7_0 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_8 </ci>
+                  <ci> w_l_8_0 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_9 </ci>
+                  <ci> w_l_9_0 </ci>
+                </apply>
+                <ci> b_l_0 </ci>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="p_S">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_0 </ci>
+                  <ci> w_l_0_1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_1 </ci>
+                  <ci> w_l_1_1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_2 </ci>
+                  <ci> w_l_2_1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_3 </ci>
+                  <ci> w_l_3_1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_4 </ci>
+                  <ci> w_l_4_1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_5 </ci>
+                  <ci> w_l_5_1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_6 </ci>
+                  <ci> w_l_6_1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_7 </ci>
+                  <ci> w_l_7_1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_8 </ci>
+                  <ci> w_l_8_1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_9 </ci>
+                  <ci> w_l_9_1 </ci>
+                </apply>
+                <ci> b_l_1 </ci>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="p_PT">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_0 </ci>
+                  <ci> w_l_0_2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_1 </ci>
+                  <ci> w_l_1_2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_2 </ci>
+                  <ci> w_l_2_2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_3 </ci>
+                  <ci> w_l_3_2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_4 </ci>
+                  <ci> w_l_4_2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_5 </ci>
+                  <ci> w_l_5_2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_6 </ci>
+                  <ci> w_l_6_2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_7 </ci>
+                  <ci> w_l_7_2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_8 </ci>
+                  <ci> w_l_8_2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_9 </ci>
+                  <ci> w_l_9_2 </ci>
+                </apply>
+                <ci> b_l_2 </ci>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="p_PM">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_0 </ci>
+                  <ci> w_l_0_3 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_1 </ci>
+                  <ci> w_l_1_3 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_2 </ci>
+                  <ci> w_l_2_3 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_3 </ci>
+                  <ci> w_l_3_3 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_4 </ci>
+                  <ci> w_l_4_3 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_5 </ci>
+                  <ci> w_l_5_3 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_6 </ci>
+                  <ci> w_l_6_3 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_7 </ci>
+                  <ci> w_l_7_3 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_8 </ci>
+                  <ci> w_l_8_3 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_9 </ci>
+                  <ci> w_l_9_3 </ci>
+                </apply>
+                <ci> b_l_3 </ci>
+              </apply>
+            </math>
+          </eventAssignment>
+          <eventAssignment variable="p_V">
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_0 </ci>
+                  <ci> w_l_0_4 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_1 </ci>
+                  <ci> w_l_1_4 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_2 </ci>
+                  <ci> w_l_2_4 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_3 </ci>
+                  <ci> w_l_3_4 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_4 </ci>
+                  <ci> w_l_4_4 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_5 </ci>
+                  <ci> w_l_5_4 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_6 </ci>
+                  <ci> w_l_6_4 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_7 </ci>
+                  <ci> w_l_7_4 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_8 </ci>
+                  <ci> w_l_8_4 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> p_n_0_9 </ci>
+                  <ci> w_l_9_4 </ci>
+                </apply>
+                <ci> b_l_4 </ci>
+              </apply>
+            </math>
+          </eventAssignment>
+        </listOfEventAssignments>
+      </event>
+    </listOfEvents>
+  </model>
+</sbml>

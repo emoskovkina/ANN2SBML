@@ -1,0 +1,1069 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" level="3" version="1">
+  <model id="NN" substanceUnits="mmol" timeUnits="second" volumeUnits="litre" areaUnits="m2" lengthUnits="metre" extentUnits="mmol">
+    <listOfFunctionDefinitions>
+      <functionDefinition id="relu">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <lambda>
+            <bvar>
+              <ci> x </ci>
+            </bvar>
+            <piecewise>
+              <piece>
+                <ci> x </ci>
+                <apply>
+                  <gt/>
+                  <ci> x </ci>
+                  <cn type="integer"> 0 </cn>
+                </apply>
+              </piece>
+              <otherwise>
+                <cn type="integer"> 0 </cn>
+              </otherwise>
+            </piecewise>
+          </lambda>
+        </math>
+      </functionDefinition>
+    </listOfFunctionDefinitions>
+    <listOfUnitDefinitions>
+      <unitDefinition id="m2">
+        <listOfUnits>
+          <unit kind="metre" exponent="2" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="mmol">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-3" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="c" spatialDimensions="3" size="1" units="litre" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="n1_1" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="n1_2" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="n1_3" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="n1_4" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="n1_5" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="n2_1" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="n2_2" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="n2_3" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="n2_4" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="n2_5" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="adp" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="asa" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="asp" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="aspp" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="atp" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="hs" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="hsp" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="nadp" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="nadph" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="phos" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="thr" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+    </listOfSpecies>
+    <listOfParameters>
+      <parameter id="adp_max" value="3.05731565550512" constant="true"/>
+      <parameter id="asa_max" value="0.0675092902498612" constant="true"/>
+      <parameter id="asp_max" value="3.27482347304945" constant="true"/>
+      <parameter id="aspp_max" value="0.00792082320120257" constant="true"/>
+      <parameter id="atp_max" value="18.2994513317608" constant="true"/>
+      <parameter id="hs_max" value="0.343071358965715" constant="true"/>
+      <parameter id="hsp_max" value="0.166063237090271" constant="true"/>
+      <parameter id="nadp_max" value="2.19565107858386" constant="true"/>
+      <parameter id="nadph_max" value="2.41130659913512" constant="true"/>
+      <parameter id="phos_max" value="2.94389218942928" constant="true"/>
+      <parameter id="thr_max" value="3.68973505302668" constant="true"/>
+      <parameter id="adp_min" value="0" constant="true"/>
+      <parameter id="asa_min" value="0" constant="true"/>
+      <parameter id="asp_min" value="0" constant="true"/>
+      <parameter id="aspp_min" value="0" constant="true"/>
+      <parameter id="atp_min" value="0" constant="true"/>
+      <parameter id="hs_min" value="0" constant="true"/>
+      <parameter id="hsp_min" value="0" constant="true"/>
+      <parameter id="nadp_min" value="0" constant="true"/>
+      <parameter id="nadph_min" value="0" constant="true"/>
+      <parameter id="phos_min" value="0" constant="true"/>
+      <parameter id="thr_min" value="1.43065513543135" constant="true"/>
+      <parameter id="t_max" value="100" constant="true"/>
+      <parameter id="t_scaled" value="0" constant="false"/>
+      <parameter id="asp0" value="1.2929" constant="true"/>
+      <parameter id="asp0_min" value="1" constant="true"/>
+      <parameter id="asp0_max" value="3" constant="true"/>
+      <parameter id="asp0_scaled" value="1.2929" constant="true"/>
+      <parameter id="atp0" value="6.4644" constant="true"/>
+      <parameter id="atp0_min" value="5" constant="true"/>
+      <parameter id="atp0_max" value="15" constant="true"/>
+      <parameter id="atp0_scaled" value="6.4644" constant="true"/>
+      <parameter id="w0_1_1" value="2.94541096687317" constant="true"/>
+      <parameter id="w0_2_1" value="0.0936533734202385" constant="true"/>
+      <parameter id="w0_3_1" value="0.105146028101444" constant="true"/>
+      <parameter id="w0_1_2" value="0.147841706871986" constant="true"/>
+      <parameter id="w0_2_2" value="-0.53845876455307" constant="true"/>
+      <parameter id="w0_3_2" value="0.255290269851685" constant="true"/>
+      <parameter id="w0_1_3" value="-0.249983549118042" constant="true"/>
+      <parameter id="w0_2_3" value="0.00922823790460825" constant="true"/>
+      <parameter id="w0_3_3" value="0.904891788959503" constant="true"/>
+      <parameter id="w0_1_4" value="-0.574459969997406" constant="true"/>
+      <parameter id="w0_2_4" value="0.669512510299683" constant="true"/>
+      <parameter id="w0_3_4" value="-0.208320066332817" constant="true"/>
+      <parameter id="w0_1_5" value="-0.108143739402294" constant="true"/>
+      <parameter id="w0_2_5" value="0.0727606117725372" constant="true"/>
+      <parameter id="w0_3_5" value="0.0786690786480904" constant="true"/>
+      <parameter id="w1_1" value="0.406962633132935" constant="true"/>
+      <parameter id="w1_2" value="-0.134042605757713" constant="true"/>
+      <parameter id="w1_3" value="0.490420490503311" constant="true"/>
+      <parameter id="w1_4" value="0.687281250953674" constant="true"/>
+      <parameter id="w1_5" value="-0.235782787203789" constant="true"/>
+      <parameter id="w2_1_1" value="-0.680921256542206" constant="true"/>
+      <parameter id="w2_2_1" value="0.420412987470627" constant="true"/>
+      <parameter id="w2_3_1" value="0.250142782926559" constant="true"/>
+      <parameter id="w2_4_1" value="0.14042067527771" constant="true"/>
+      <parameter id="w2_5_1" value="-0.39452537894249" constant="true"/>
+      <parameter id="w2_1_2" value="0.971451997756958" constant="true"/>
+      <parameter id="w2_2_2" value="0.238167524337769" constant="true"/>
+      <parameter id="w2_3_2" value="-0.444372564554214" constant="true"/>
+      <parameter id="w2_4_2" value="-0.34003284573555" constant="true"/>
+      <parameter id="w2_5_2" value="0.431637108325958" constant="true"/>
+      <parameter id="w2_1_3" value="0.228108063340187" constant="true"/>
+      <parameter id="w2_2_3" value="0.010211837477982" constant="true"/>
+      <parameter id="w2_3_3" value="-0.18932218849659" constant="true"/>
+      <parameter id="w2_4_3" value="0.83557116985321" constant="true"/>
+      <parameter id="w2_5_3" value="-0.1318449229002" constant="true"/>
+      <parameter id="w2_1_4" value="0.352396667003632" constant="true"/>
+      <parameter id="w2_2_4" value="-0.248608261346817" constant="true"/>
+      <parameter id="w2_3_4" value="-0.520508587360382" constant="true"/>
+      <parameter id="w2_4_4" value="-0.44872573018074" constant="true"/>
+      <parameter id="w2_5_4" value="0.117476917803288" constant="true"/>
+      <parameter id="w2_1_5" value="0.963367998600006" constant="true"/>
+      <parameter id="w2_2_5" value="-0.147473111748695" constant="true"/>
+      <parameter id="w2_3_5" value="0.271163761615753" constant="true"/>
+      <parameter id="w2_4_5" value="0.109503574669361" constant="true"/>
+      <parameter id="w2_5_5" value="-0.0362328700721264" constant="true"/>
+      <parameter id="w3_1" value="0.661163866519928" constant="true"/>
+      <parameter id="w3_2" value="-0.0677158758044243" constant="true"/>
+      <parameter id="w3_3" value="0.192885398864746" constant="true"/>
+      <parameter id="w3_4" value="-0.088924877345562" constant="true"/>
+      <parameter id="w3_5" value="-0.197635278105736" constant="true"/>
+      <parameter id="w4_1_1" value="-0.282232165336609" constant="true"/>
+      <parameter id="w4_2_1" value="0.0176915172487497" constant="true"/>
+      <parameter id="w4_3_1" value="0.047476414591074" constant="true"/>
+      <parameter id="w4_4_1" value="-0.162414073944092" constant="true"/>
+      <parameter id="w4_5_1" value="0.233656421303749" constant="true"/>
+      <parameter id="w4_1_2" value="-0.457949817180634" constant="true"/>
+      <parameter id="w4_2_2" value="-0.961301743984222" constant="true"/>
+      <parameter id="w4_3_2" value="0.154799580574036" constant="true"/>
+      <parameter id="w4_4_2" value="0.878384470939636" constant="true"/>
+      <parameter id="w4_5_2" value="0.56494277715683" constant="true"/>
+      <parameter id="w4_1_3" value="0.334398210048676" constant="true"/>
+      <parameter id="w4_2_3" value="-0.340127140283585" constant="true"/>
+      <parameter id="w4_3_3" value="0.794971644878387" constant="true"/>
+      <parameter id="w4_4_3" value="-0.0328207463026047" constant="true"/>
+      <parameter id="w4_5_3" value="0.307922333478928" constant="true"/>
+      <parameter id="w4_1_4" value="0.305373311042786" constant="true"/>
+      <parameter id="w4_2_4" value="-0.798729479312897" constant="true"/>
+      <parameter id="w4_3_4" value="0.183691948652267" constant="true"/>
+      <parameter id="w4_4_4" value="-0.0457599982619286" constant="true"/>
+      <parameter id="w4_5_4" value="0.846217691898346" constant="true"/>
+      <parameter id="w4_1_5" value="0.356631755828857" constant="true"/>
+      <parameter id="w4_2_5" value="-0.565657377243042" constant="true"/>
+      <parameter id="w4_3_5" value="-0.434908956289291" constant="true"/>
+      <parameter id="w4_4_5" value="-0.133790597319603" constant="true"/>
+      <parameter id="w4_5_5" value="0.73302173614502" constant="true"/>
+      <parameter id="w4_1_6" value="-0.995859980583191" constant="true"/>
+      <parameter id="w4_2_6" value="-1.02174842357635" constant="true"/>
+      <parameter id="w4_3_6" value="-0.0480358377099037" constant="true"/>
+      <parameter id="w4_4_6" value="0.903554677963257" constant="true"/>
+      <parameter id="w4_5_6" value="0.640197098255157" constant="true"/>
+      <parameter id="w4_1_7" value="-1.78526544570923" constant="true"/>
+      <parameter id="w4_2_7" value="-0.673273503780365" constant="true"/>
+      <parameter id="w4_3_7" value="0.0787131786346436" constant="true"/>
+      <parameter id="w4_4_7" value="0.319157898426056" constant="true"/>
+      <parameter id="w4_5_7" value="0.249103337526321" constant="true"/>
+      <parameter id="w4_1_8" value="-0.530821681022644" constant="true"/>
+      <parameter id="w4_2_8" value="-0.2021204829216" constant="true"/>
+      <parameter id="w4_3_8" value="0.118482239544392" constant="true"/>
+      <parameter id="w4_4_8" value="-0.0730364769697189" constant="true"/>
+      <parameter id="w4_5_8" value="0.375973492860794" constant="true"/>
+      <parameter id="w4_1_9" value="0.567089915275574" constant="true"/>
+      <parameter id="w4_2_9" value="0.198369413614273" constant="true"/>
+      <parameter id="w4_3_9" value="-0.0987700894474983" constant="true"/>
+      <parameter id="w4_4_9" value="0.0517665073275566" constant="true"/>
+      <parameter id="w4_5_9" value="-0.333147644996643" constant="true"/>
+      <parameter id="w4_1_10" value="-0.110375843942165" constant="true"/>
+      <parameter id="w4_2_10" value="0.0977069884538651" constant="true"/>
+      <parameter id="w4_3_10" value="0.0657123848795891" constant="true"/>
+      <parameter id="w4_4_10" value="-0.276496738195419" constant="true"/>
+      <parameter id="w4_5_10" value="0.207897767424583" constant="true"/>
+      <parameter id="w4_1_11" value="0.0173976123332977" constant="true"/>
+      <parameter id="w4_2_11" value="0.0824758633971214" constant="true"/>
+      <parameter id="w4_3_11" value="0.104063659906387" constant="true"/>
+      <parameter id="w4_4_11" value="-0.121498197317123" constant="true"/>
+      <parameter id="w4_5_11" value="0.0679595619440079" constant="true"/>
+      <parameter id="w5_1" value="0.00335855153389275" constant="true"/>
+      <parameter id="w5_2" value="0.251449257135391" constant="true"/>
+      <parameter id="w5_3" value="-0.590447306632996" constant="true"/>
+      <parameter id="w5_4" value="-0.449775487184525" constant="true"/>
+      <parameter id="w5_5" value="0.155351147055626" constant="true"/>
+      <parameter id="w5_6" value="0.347005218267441" constant="true"/>
+      <parameter id="w5_7" value="0.861679971218109" constant="true"/>
+      <parameter id="w5_8" value="0.0085282688960433" constant="true"/>
+      <parameter id="w5_9" value="0.772385358810425" constant="true"/>
+      <parameter id="w5_10" value="-0.0784902796149254" constant="true"/>
+      <parameter id="w5_11" value="0.099980540573597" constant="true"/>
+    </listOfParameters>
+    <listOfInitialAssignments>
+      <initialAssignment symbol="asp0_scaled">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <minus/>
+              <ci> asp0 </ci>
+              <ci> asp0_min </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <ci> asp0_max </ci>
+              <ci> asp0_min </ci>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+      <initialAssignment symbol="atp0_scaled">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <apply>
+              <minus/>
+              <ci> atp0 </ci>
+              <ci> atp0_min </ci>
+            </apply>
+            <apply>
+              <minus/>
+              <ci> atp0_max </ci>
+              <ci> atp0_min </ci>
+            </apply>
+          </apply>
+        </math>
+      </initialAssignment>
+    </listOfInitialAssignments>
+    <listOfRules>
+      <assignmentRule variable="t_scaled">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <divide/>
+            <csymbol encoding="text" definitionURL="http://www.sbml.org/sbml/symbols/time"> time </csymbol>
+            <ci> t_max </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="n1_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <ci> relu </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> t_scaled </ci>
+                <ci> w0_1_1 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> asp0_scaled </ci>
+                <ci> w0_2_1 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> atp0_scaled </ci>
+                <ci> w0_3_1 </ci>
+              </apply>
+              <ci> w1_1 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="n1_2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <ci> relu </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> t_scaled </ci>
+                <ci> w0_1_2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> asp0_scaled </ci>
+                <ci> w0_2_2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> atp0_scaled </ci>
+                <ci> w0_3_2 </ci>
+              </apply>
+              <ci> w1_2 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="n1_3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <ci> relu </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> t_scaled </ci>
+                <ci> w0_1_3 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> asp0_scaled </ci>
+                <ci> w0_2_3 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> atp0_scaled </ci>
+                <ci> w0_3_3 </ci>
+              </apply>
+              <ci> w1_3 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="n1_4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <ci> relu </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> t_scaled </ci>
+                <ci> w0_1_4 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> asp0_scaled </ci>
+                <ci> w0_2_4 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> atp0_scaled </ci>
+                <ci> w0_3_4 </ci>
+              </apply>
+              <ci> w1_4 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="n1_5">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <ci> relu </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> t_scaled </ci>
+                <ci> w0_1_5 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> asp0_scaled </ci>
+                <ci> w0_2_5 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> atp0_scaled </ci>
+                <ci> w0_3_5 </ci>
+              </apply>
+              <ci> w1_5 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="n2_1">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <ci> relu </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> n1_1 </ci>
+                <ci> w2_1_1 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_2 </ci>
+                <ci> w2_2_1 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_3 </ci>
+                <ci> w2_3_1 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_4 </ci>
+                <ci> w2_4_1 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_5 </ci>
+                <ci> w2_5_1 </ci>
+              </apply>
+              <ci> w3_1 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="n2_2">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <ci> relu </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> n1_1 </ci>
+                <ci> w2_1_2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_2 </ci>
+                <ci> w2_2_2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_3 </ci>
+                <ci> w2_3_2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_4 </ci>
+                <ci> w2_4_2 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_5 </ci>
+                <ci> w2_5_2 </ci>
+              </apply>
+              <ci> w3_2 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="n2_3">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <ci> relu </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> n1_1 </ci>
+                <ci> w2_1_3 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_2 </ci>
+                <ci> w2_2_3 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_3 </ci>
+                <ci> w2_3_3 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_4 </ci>
+                <ci> w2_4_3 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_5 </ci>
+                <ci> w2_5_3 </ci>
+              </apply>
+              <ci> w3_3 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="n2_4">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <ci> relu </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> n1_1 </ci>
+                <ci> w2_1_4 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_2 </ci>
+                <ci> w2_2_4 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_3 </ci>
+                <ci> w2_3_4 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_4 </ci>
+                <ci> w2_4_4 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_5 </ci>
+                <ci> w2_5_4 </ci>
+              </apply>
+              <ci> w3_4 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="n2_5">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <ci> relu </ci>
+            <apply>
+              <plus/>
+              <apply>
+                <times/>
+                <ci> n1_1 </ci>
+                <ci> w2_1_5 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_2 </ci>
+                <ci> w2_2_5 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_3 </ci>
+                <ci> w2_3_5 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_4 </ci>
+                <ci> w2_4_5 </ci>
+              </apply>
+              <apply>
+                <times/>
+                <ci> n1_5 </ci>
+                <ci> w2_5_5 </ci>
+              </apply>
+              <ci> w3_5 </ci>
+            </apply>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="adp">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> n2_1 </ci>
+                  <ci> w4_1_1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_2 </ci>
+                  <ci> w4_2_1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_3 </ci>
+                  <ci> w4_3_1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_4 </ci>
+                  <ci> w4_4_1 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_5 </ci>
+                  <ci> w4_5_1 </ci>
+                </apply>
+                <ci> w5_1 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <ci> adp_max </ci>
+                <ci> adp_min </ci>
+              </apply>
+            </apply>
+            <ci> adp_min </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="asa">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> n2_1 </ci>
+                  <ci> w4_1_2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_2 </ci>
+                  <ci> w4_2_2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_3 </ci>
+                  <ci> w4_3_2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_4 </ci>
+                  <ci> w4_4_2 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_5 </ci>
+                  <ci> w4_5_2 </ci>
+                </apply>
+                <ci> w5_2 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <ci> asa_max </ci>
+                <ci> asa_min </ci>
+              </apply>
+            </apply>
+            <ci> asa_min </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="asp">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> n2_1 </ci>
+                  <ci> w4_1_3 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_2 </ci>
+                  <ci> w4_2_3 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_3 </ci>
+                  <ci> w4_3_3 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_4 </ci>
+                  <ci> w4_4_3 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_5 </ci>
+                  <ci> w4_5_3 </ci>
+                </apply>
+                <ci> w5_3 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <ci> asp_max </ci>
+                <ci> asp_min </ci>
+              </apply>
+            </apply>
+            <ci> asp_min </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="aspp">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> n2_1 </ci>
+                  <ci> w4_1_4 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_2 </ci>
+                  <ci> w4_2_4 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_3 </ci>
+                  <ci> w4_3_4 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_4 </ci>
+                  <ci> w4_4_4 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_5 </ci>
+                  <ci> w4_5_4 </ci>
+                </apply>
+                <ci> w5_4 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <ci> aspp_max </ci>
+                <ci> aspp_min </ci>
+              </apply>
+            </apply>
+            <ci> aspp_min </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="atp">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> n2_1 </ci>
+                  <ci> w4_1_5 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_2 </ci>
+                  <ci> w4_2_5 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_3 </ci>
+                  <ci> w4_3_5 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_4 </ci>
+                  <ci> w4_4_5 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_5 </ci>
+                  <ci> w4_5_5 </ci>
+                </apply>
+                <ci> w5_5 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <ci> atp_max </ci>
+                <ci> atp_min </ci>
+              </apply>
+            </apply>
+            <ci> atp_min </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="hs">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> n2_1 </ci>
+                  <ci> w4_1_6 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_2 </ci>
+                  <ci> w4_2_6 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_3 </ci>
+                  <ci> w4_3_6 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_4 </ci>
+                  <ci> w4_4_6 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_5 </ci>
+                  <ci> w4_5_6 </ci>
+                </apply>
+                <ci> w5_6 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <ci> hs_max </ci>
+                <ci> hs_min </ci>
+              </apply>
+            </apply>
+            <ci> hs_min </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="hsp">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> n2_1 </ci>
+                  <ci> w4_1_7 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_2 </ci>
+                  <ci> w4_2_7 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_3 </ci>
+                  <ci> w4_3_7 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_4 </ci>
+                  <ci> w4_4_7 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_5 </ci>
+                  <ci> w4_5_7 </ci>
+                </apply>
+                <ci> w5_7 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <ci> hsp_max </ci>
+                <ci> hsp_min </ci>
+              </apply>
+            </apply>
+            <ci> hsp_min </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="nadp">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> n2_1 </ci>
+                  <ci> w4_1_8 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_2 </ci>
+                  <ci> w4_2_8 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_3 </ci>
+                  <ci> w4_3_8 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_4 </ci>
+                  <ci> w4_4_8 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_5 </ci>
+                  <ci> w4_5_8 </ci>
+                </apply>
+                <ci> w5_8 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <ci> nadp_max </ci>
+                <ci> nadp_min </ci>
+              </apply>
+            </apply>
+            <ci> nadp_min </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="nadph">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> n2_1 </ci>
+                  <ci> w4_1_9 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_2 </ci>
+                  <ci> w4_2_9 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_3 </ci>
+                  <ci> w4_3_9 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_4 </ci>
+                  <ci> w4_4_9 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_5 </ci>
+                  <ci> w4_5_9 </ci>
+                </apply>
+                <ci> w5_9 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <ci> nadph_max </ci>
+                <ci> nadph_min </ci>
+              </apply>
+            </apply>
+            <ci> nadph_min </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="phos">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> n2_1 </ci>
+                  <ci> w4_1_10 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_2 </ci>
+                  <ci> w4_2_10 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_3 </ci>
+                  <ci> w4_3_10 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_4 </ci>
+                  <ci> w4_4_10 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_5 </ci>
+                  <ci> w4_5_10 </ci>
+                </apply>
+                <ci> w5_10 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <ci> phos_max </ci>
+                <ci> phos_min </ci>
+              </apply>
+            </apply>
+            <ci> phos_min </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+      <assignmentRule variable="thr">
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <apply>
+            <plus/>
+            <apply>
+              <times/>
+              <apply>
+                <plus/>
+                <apply>
+                  <times/>
+                  <ci> n2_1 </ci>
+                  <ci> w4_1_11 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_2 </ci>
+                  <ci> w4_2_11 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_3 </ci>
+                  <ci> w4_3_11 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_4 </ci>
+                  <ci> w4_4_11 </ci>
+                </apply>
+                <apply>
+                  <times/>
+                  <ci> n2_5 </ci>
+                  <ci> w4_5_11 </ci>
+                </apply>
+                <ci> w5_11 </ci>
+              </apply>
+              <apply>
+                <minus/>
+                <ci> thr_max </ci>
+                <ci> thr_min </ci>
+              </apply>
+            </apply>
+            <ci> thr_min </ci>
+          </apply>
+        </math>
+      </assignmentRule>
+    </listOfRules>
+  </model>
+</sbml>
