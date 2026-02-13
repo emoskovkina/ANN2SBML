@@ -44,10 +44,10 @@
       <species id="V" compartment="c" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
     </listOfSpecies>
     <listOfParameters>
-      <parameter id="X_max" value="3.19189642640129" constant="true"/>
+      <parameter id="X_max" value="3.08488684446688" constant="true"/>
       <parameter id="S_max" value="5" constant="true"/>
-      <parameter id="PT_max" value="11.2094131454655" constant="true"/>
-      <parameter id="PM_max" value="11.561684904235" constant="true"/>
+      <parameter id="PT_max" value="11.1178289166673" constant="true"/>
+      <parameter id="PM_max" value="10.7179276549742" constant="true"/>
       <parameter id="V_max" value="14.2964389367112" constant="true"/>
       <parameter id="X_min" value="0.5" constant="true"/>
       <parameter id="S_min" value="0.00305697679503479" constant="true"/>
