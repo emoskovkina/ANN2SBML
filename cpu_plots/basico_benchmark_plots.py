@@ -5,7 +5,7 @@ import statistics
 with open('res.pickle', 'rb') as handle:
     res = pickle.load(handle)
 
-encodings_chass = ["big_asssignment_rules", "layers_as_compartments", "nodes_as_species", "nodes_as_parameters"]
+encodings_chass = ["big_assignment_rules", "layers_as_compartments", "nodes_as_species", "nodes_as_parameters"]
 encodings_pr = ["big_event_assignments", "layers_as_compartments", "nodes_as_species", "nodes_as_parameters"]
 encodings = [encodings_chass, encodings_pr]
 model_names_chass = ['original\nODE\nmodel'] + [f"FFNN.1.{i}" for i in range(1, 4)]
