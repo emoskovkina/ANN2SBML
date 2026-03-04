@@ -31,3 +31,25 @@ for case_study_res, model_names_case_study, encodings_case_study, case_study_nam
         plt.savefig(f'{case_study_name}_{encoding_name}.png')
         plt.clf()
 
+res2 = [[cs[0][0]] + [enc[1] for enc in cs] for cs in res]
+
+encoding_names = ['original\nODE\nmodel', "encoding I", "encoding II", "encoding III", "encoding IV"]
+
+for case_study_res, case_study_name in zip(res2, ("chass", "pr")):
+    plt.figure(figsize=(9, 6), dpi=80)
+    plt.boxplot(case_study_res)
+    plt.xticks(range(1, len(case_study_res) + 1), encoding_names)
+    ylim = plt.gca().get_ylim()
+    delta_for_text_y = (ylim[1] - ylim[0])/100 # empiric value
+    for i, el in enumerate(case_study_res):
+        median = statistics.median(el)
+        median_str = '%.2f' % median
+        x = i+1.26
+        y = median - delta_for_text_y
+        plt.text(x, y, median_str)
+    plt.ylabel("CPU (s)")
+
+    plt.tight_layout()
+    plt.savefig(f'{case_study_name}_smallest_different_encodings.png')
+    plt.clf()
+
